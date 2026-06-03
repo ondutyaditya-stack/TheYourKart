@@ -42,7 +42,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <div className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
       {/* Image Container */}
       <div className="relative aspect-square overflow-hidden bg-muted">
-        <Link href={`/product/${product.id}`}>
+        <Link href={`/product/${encodeURIComponent(product.id)}`}>
           <Image
             src={product.image}
             alt={product.name}
@@ -85,7 +85,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </p>
 
         {/* Title */}
-        <Link href={`/product/${product.id}`}>
+        <Link href={`/product/${encodeURIComponent(product.id)}`}>
           <h3 className="font-medium text-card-foreground line-clamp-2 mb-2 hover:text-primary transition-colors">
             {product.name}
           </h3>
